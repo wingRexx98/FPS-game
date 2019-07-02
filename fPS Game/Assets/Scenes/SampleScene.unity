@@ -286,6 +286,36 @@ MonoBehaviour:
   lookY: 
   sensitivity: 0
   playerBody: {fileID: 0}
+--- !u!1 &271907019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 271907020}
+  m_Layer: 0
+  m_Name: bullet point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &271907020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271907019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: 0, z: 0.635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 879770073}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &499276397
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +818,7 @@ GameObject:
   - component: {fileID: 879770076}
   - component: {fileID: 879770075}
   - component: {fileID: 879770074}
+  - component: {fileID: 879770078}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -807,6 +838,7 @@ Transform:
   m_LocalScale: {x: 0.17145, y: 0.13132612, z: 0.8380615}
   m_Children:
   - {fileID: 1136678824}
+  - {fileID: 271907020}
   m_Father: {fileID: 1182813088}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -817,7 +849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879770072}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab78da944264fee4c90ce84cc8b96433, type: 3}
   m_Name: 
@@ -888,6 +920,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879770072}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &879770078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879770072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8ced8003c393640befc86eda62c03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 15
+  bulletPrefab: {fileID: 5724204622762908278, guid: f04dd3c3e372e7b4b9275fc89f89acd9,
+    type: 3}
+  firePoint: {fileID: 271907020}
+  shot: {fileID: 1136678826}
 --- !u!1 &1136678823
 GameObject:
   m_ObjectHideFlags: 0

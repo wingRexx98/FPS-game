@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun_Raycast : MonoBehaviour
 {
     public float damage;
     public float distance;
