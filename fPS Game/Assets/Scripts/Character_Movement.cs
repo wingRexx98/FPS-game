@@ -18,9 +18,15 @@ public class Character_Movement : MonoBehaviour
     
     void Update()
     {
-        direction = new Vector3(Input.GetAxisRaw("Horizontal") * speed, direction.y, Input.GetAxisRaw("Vertical") * speed);
+        //direction = new Vector3(Input.GetAxisRaw("Horizontal") * speed, direction.y, Input.GetAxisRaw("Vertical") * speed);//doesn;t work with camera rotattion due to the move position eing the same no mater the camera view
+
+        direction = (transform.forward * Input.GetAxisRaw("Vertical"))//move the player forward depending on where the camera is facing
+            + (transform.right * Input.GetAxisRaw("Horizontal"));//move the player right and left depending on where the camera is facing;
+
+        direction = direction.normalized * speed;
 
         if (controller.isGrounded) {
+            direction.y = 0f;
             if (Input.GetButtonDown("Jump"))
             {
                 direction.y = jumpForce;
